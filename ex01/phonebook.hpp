@@ -6,7 +6,7 @@
 /*   By: alaaouar <alaaouar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 22:07:00 by alaaouar          #+#    #+#             */
-/*   Updated: 2025/03/23 01:05:06 by alaaouar         ###   ########.fr       */
+/*   Updated: 2025/03/23 19:36:26 by alaaouar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # define PHONEBOOK_HPP
 
 # include "contact.hpp"
-# define START "*******************************\n"
+# define START "\033[2J\033[H*******************************\n"
 # define END "\n*******************************\n"
 # define MAX_CONTACTS 8
 # define CLEAR "\033[2J\033[H"
