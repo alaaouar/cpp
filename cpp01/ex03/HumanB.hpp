@@ -6,7 +6,7 @@
 /*   By: alaaouar <alaaouar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 04:42:51 by alaaouar          #+#    #+#             */
-/*   Updated: 2025/03/28 05:29:26 by alaaouar         ###   ########.fr       */
+/*   Updated: 2025/03/28 09:57:15 by alaaouar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #define HUMANB_HPP
 
 #include "Weapon.hpp"
-
+#include <iostream>
+#include <string>
 class HumanB
 {
 	private:

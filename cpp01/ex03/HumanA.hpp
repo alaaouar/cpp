@@ -6,7 +6,7 @@
 /*   By: alaaouar <alaaouar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 04:45:32 by alaaouar          #+#    #+#             */
-/*   Updated: 2025/03/28 05:29:02 by alaaouar         ###   ########.fr       */
+/*   Updated: 2025/03/28 09:57:29 by alaaouar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define HUMANA_HPP
 
 #include "Weapon.hpp"
+#include <iostream>
+#include <string>
 
 class HumanA
 {
