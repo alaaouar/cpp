@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alaaouar <alaaouar@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: alaaouar <alaaouar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 21:02:34 by alaaouar          #+#    #+#             */
-/*   Updated: 2025/04/19 21:04:04 by alaaouar         ###   ########.fr       */
+/*   Updated: 2025/04/19 22:15:43 by alaaouar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ FragTrap::FragTrap()
     std::cout << "Default constructor called from FragTrap\n";
     _name = "Default";
     _hitPoints = 100;
-    _energyPoints = 50;
-    _attackDamage = 20;
+    _energyPoints = 100;
+    _attackDamage = 30;
 }
 
 FragTrap::FragTrap(std::string initName) : ClapTrap(initName)
@@ -26,8 +26,8 @@ FragTrap::FragTrap(std::string initName) : ClapTrap(initName)
     std::cout << "Parameterized constructor called from FragTrap\n";
     _name = initName;
     _hitPoints = 100;
-    _energyPoints = 50;
-    _attackDamage = 20;
+    _energyPoints = 100;
+    _attackDamage = 30;
 }
 
 FragTrap::FragTrap(FragTrap const &src) : ClapTrap(src)

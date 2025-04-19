@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alaaouar <alaaouar@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: alaaouar <alaaouar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 22:22:53 by alaaouar          #+#    #+#             */
-/*   Updated: 2025/04/19 20:33:18 by alaaouar         ###   ########.fr       */
+/*   Updated: 2025/04/19 22:13:53 by alaaouar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ScavTrap :: ScavTrap() : ClapTrap()	{
 	this->_guardmode = false;
-	this->_hitPoints = 10;
+	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
 	std::cout << "ScavTrap Default Constructor announced" << std::endl;
@@ -27,7 +27,7 @@ ScavTrap::ScavTrap(const ScavTrap &copy): ClapTrap(copy)	{
 
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)	{
 	this->_guardmode = false;
-	this->_hitPoints = 10;
+	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
 	std::cout << "ScavTrap Constructor for the name " << this->_name << " announced" << std::endl;
