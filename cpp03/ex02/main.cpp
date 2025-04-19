@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alaaouar <alaaouar@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 22:22:49 by alaaouar          #+#    #+#             */
-/*   Updated: 2025/04/19 20:29:57 by alaaouar         ###   ########.fr       */
+/*   Created: 2025/04/17 20:04:14 by alaaouar          #+#    #+#             */
+/*   Updated: 2025/04/19 21:06:16 by alaaouar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
-class ScavTrap : public ClapTrap
+int main()
 {
-private:
-    bool _guardmode;
-public:
-    ScavTrap();
-    ScavTrap(const std::string& name);
-    ScavTrap(const ScavTrap &copy);
-
-    ScavTrap &operator=(const ScavTrap &src);
-    virtual ~ScavTrap();
-
-    void attack(const std::string &target);
-    void guardGate();
-};
-
-
-#endif
+    FragTrap t("hero");
+	t.attack("godzila");
+    t.takeDamage(155);
+    t.beRepaired(2);
+    t.highFivesGuys();
+    return 0;
+}
