@@ -6,7 +6,7 @@
 /*   By: alaaouar <alaaouar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 18:33:02 by alaaouar          #+#    #+#             */
-/*   Updated: 2025/10/09 00:02:07 by alaaouar         ###   ########.fr       */
+/*   Updated: 2025/10/09 00:07:18 by alaaouar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,11 @@ int main() {
         std::cout << formalowla<< std::endl;
         std::cout << formtanya << std::endl;
         std::cout << "-----------------------------------" << std::endl;
+    } catch (const std::exception &e) {
+        std::cerr << "Error creating form: " << e.what() << std::endl;
+    }
+    try {
+        Form forminvalid("FormInvalid", 0, 151);
     } catch (const std::exception &e) {
         std::cerr << "Error creating form: " << e.what() << std::endl;
     }
