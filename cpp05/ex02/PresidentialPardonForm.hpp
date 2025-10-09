@@ -6,7 +6,7 @@
 /*   By: alaaouar <alaaouar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 03:46:04 by alaaouar          #+#    #+#             */
-/*   Updated: 2025/10/09 03:46:33 by alaaouar         ###   ########.fr       */
+/*   Updated: 2025/10/09 17:49:53 by alaaouar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define PRESIDENTIALPARDONFORM_HPP
 #include "AForm.hpp"
 
-class PresidentialPardonForm : public AForm
+class PresidentialPardonForm : public Form
 {
 private:
     const std::string _target;

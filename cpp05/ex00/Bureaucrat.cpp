@@ -6,13 +6,13 @@
 /*   By: alaaouar <alaaouar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 18:51:20 by alaaouar          #+#    #+#             */
-/*   Updated: 2025/10/07 19:36:54 by alaaouar         ###   ########.fr       */
+/*   Updated: 2025/10/09 22:22:19 by alaaouar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() :  _grade(150) ,_name("NONE"){ }
+Bureaucrat::Bureaucrat() :  _grade(150) ,_name("NONE")  {     }
 
 Bureaucrat::~Bureaucrat()   { }
 

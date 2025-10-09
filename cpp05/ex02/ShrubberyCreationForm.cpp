@@ -6,7 +6,7 @@
 /*   By: alaaouar <alaaouar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 04:10:00 by alaaouar          #+#    #+#             */
-/*   Updated: 2025/10/09 04:07:08 by alaaouar         ###   ########.fr       */
+/*   Updated: 2025/10/09 17:47:24 by alaaouar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 #include <fstream>
 #include <stdexcept>
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137), _target("default") {}
+ShrubberyCreationForm::ShrubberyCreationForm() : Form("ShrubberyCreationForm", 145, 137), _target("default") {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("ShrubberyCreationForm", 145, 137), _target(target) {}
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : Form("ShrubberyCreationForm", 145, 137), _target(target) {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy) : AForm(copy), _target(copy._target) {}
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy) : Form(copy), _target(copy._target) {}
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &copy)
 {
@@ -32,9 +32,9 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {}
 void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 {
     if (!getIsSigned())
-        throw AForm::NotSignedException();
+        throw Form::NotSignedException();
     if (executor.getGrade() > getToExecute() || executor.getGrade() > getToSign())
-        throw AForm::GradeTooLowException();
+        throw Form::GradeTooLowException();
 
     std::string filename = _target + "_shrubbery";
     std::ofstream ofs(filename.c_str());

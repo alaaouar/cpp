@@ -6,7 +6,7 @@
 /*   By: alaaouar <alaaouar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 04:35:30 by alaaouar          #+#    #+#             */
-/*   Updated: 2025/10/09 04:35:31 by alaaouar         ###   ########.fr       */
+/*   Updated: 2025/10/09 18:01:00 by alaaouar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,9 @@ Intern::Intern(const Intern &other) { (void)other; }
 Intern &Intern::operator=(const Intern &other) { (void)other; return *this; }
 Intern::~Intern() {}
 
-AForm *Intern::makeForm(const std::string &formName, const std::string &target) const
+Form *Intern::makeForm(const std::string &formName, const std::string &target) const
 {
     std::string name = formName;
-    // make comparison case-insensitive for convenience
     std::transform(name.begin(), name.end(), name.begin(), ::tolower);
 
     if (name == "shrubberycreationform" || name == "shrubbery creation" || name == "shrubbery")

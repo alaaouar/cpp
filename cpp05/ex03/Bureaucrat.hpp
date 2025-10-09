@@ -6,7 +6,7 @@
 /*   By: alaaouar <alaaouar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 18:32:41 by alaaouar          #+#    #+#             */
-/*   Updated: 2025/10/09 03:44:32 by alaaouar         ###   ########.fr       */
+/*   Updated: 2025/10/09 17:47:24 by alaaouar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <string>
 #include <exception>
 
-class AForm; // Forward declaration
+class Form; // Forward declaration
 
 class Bureaucrat
 {
@@ -54,7 +54,7 @@ public:
     const std::string getName() const;
     int getGrade() const;
 
-    void signForm(AForm &form);
+    void signForm(Form &form);
 };
 
 std::ostream & operator<<(std::ostream & b, const Bureaucrat & bureaucrat);

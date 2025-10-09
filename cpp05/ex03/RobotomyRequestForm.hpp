@@ -6,7 +6,7 @@
 /*   By: alaaouar <alaaouar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 04:15:00 by alaaouar          #+#    #+#             */
-/*   Updated: 2025/10/09 04:07:08 by alaaouar         ###   ########.fr       */
+/*   Updated: 2025/10/09 17:48:33 by alaaouar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "AForm.hpp"
 
-class RobotomyRequestForm : public AForm
+class RobotomyRequestForm : public Form
 {
 private:
     std::string _target;

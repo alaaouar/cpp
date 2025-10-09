@@ -6,7 +6,7 @@
 /*   By: alaaouar <alaaouar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 18:51:20 by alaaouar          #+#    #+#             */
-/*   Updated: 2025/10/09 04:07:08 by alaaouar         ###   ########.fr       */
+/*   Updated: 2025/10/09 17:50:12 by alaaouar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void Bureaucrat::increment()
         throw GradeTooHighException();
 }
 
-void Bureaucrat::signForm(AForm &form)
+void Bureaucrat::signForm(Form &form)
 {
     try {
         form.beSigned(*this);

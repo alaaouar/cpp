@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AForm.hpp                                          :+:      :+:    :+:   */
+/*   Form.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alaaouar <alaaouar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -17,7 +17,7 @@
 
 class Bureaucrat;
 
-class AForm
+class Form
 {
 private:
     const       std::string _name;
@@ -25,9 +25,9 @@ private:
     int         _ToSign;
     int         _ToExecute;
 public:
-    AForm();
-    AForm(const std::string &name, int ToSign, int ToExecute);
-    virtual ~AForm();
+    Form();
+    Form(const std::string &name, int ToSign, int ToExecute);
+    virtual ~Form();
     virtual     void execute(const Bureaucrat& executor) const = 0;
     std::string getName()   const;
     bool    getIsSigned()   const;
@@ -60,6 +60,6 @@ public:
     void beSigned(const Bureaucrat &bureaucrat);
 };
 
-std::ostream & operator<<(std::ostream & o, const AForm & form);
+std::ostream & operator<<(std::ostream & o, const Form & form);
 
 #endif

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AForm.cpp                                          :+:      :+:    :+:   */
+/*   Form.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alaaouar <alaaouar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,19 +12,19 @@
 
 #include "AForm.hpp"
 
-AForm::AForm() : _name("default"), _Signed(false), _ToSign(150), _ToExecute(150) {    }
+Form::Form() : _name("default"), _Signed(false), _ToSign(150), _ToExecute(150) {    }
 
-AForm::~AForm()   {   }
+Form::~Form()   {   }
 
-std::string AForm::getName() const   {   return _name;        }
+std::string Form::getName() const   {   return _name;        }
 
-bool AForm::getIsSigned() const      {   return _Signed;      }
+bool Form::getIsSigned() const      {   return _Signed;      }
 
-int  AForm::getToSign() const        {   return _ToSign;      }
+int  Form::getToSign() const        {   return _ToSign;      }
 
-int  AForm::getToExecute() const     {   return _ToExecute;   }
+int  Form::getToExecute() const     {   return _ToExecute;   }
 
-AForm::AForm(const std::string &name, int ToSign, int ToExecute) : 
+Form::Form(const std::string &name, int ToSign, int ToExecute) : 
     _name(name), _Signed(false), _ToSign(ToSign), _ToExecute(ToExecute)
 {
     if (ToSign < 1 || ToExecute < 1)
@@ -33,7 +33,7 @@ AForm::AForm(const std::string &name, int ToSign, int ToExecute) :
         throw GradeTooLowException();
 }
 
-std::ostream & operator<<(std::ostream & o, const AForm & form)
+std::ostream & operator<<(std::ostream & o, const Form & form)
 {
     o << "Form Name: " << form.getName() 
       << ", Signed: " << (form.getIsSigned() ? "Yes" : "No") 
@@ -42,7 +42,7 @@ std::ostream & operator<<(std::ostream & o, const AForm & form)
     return o;
 }
 
-void AForm::beSigned(const Bureaucrat &bureaucrat)
+void Form::beSigned(const Bureaucrat &bureaucrat)
 {
     if (bureaucrat.getGrade() > _ToSign)
         throw GradeTooLowException();
