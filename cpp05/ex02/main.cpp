@@ -6,7 +6,7 @@
 /*   By: alaaouar <alaaouar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 18:33:02 by alaaouar          #+#    #+#             */
-/*   Updated: 2025/10/09 04:20:26 by alaaouar         ###   ########.fr       */
+/*   Updated: 2025/10/12 17:51:26 by alaaouar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ static void sep()
 
 int main()
 {
-    // Create bureaucrats with different grades
     Bureaucrat president("President", 1);
     Bureaucrat alice("Alice", 40);
     Bureaucrat bob("Bob", 130);
