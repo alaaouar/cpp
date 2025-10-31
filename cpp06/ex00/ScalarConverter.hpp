@@ -26,11 +26,12 @@ private:
 	ScalarConverter &operator=(const ScalarConverter &other);
 	~ScalarConverter();
 public:
-	static void convert     (const std::string &literal);
-    static void IntPrint    (double literal);
-    static void FloatPrint  (double literal);
-    static void DoublePrint (double literal);
-    static void CharPrint   (double literal);
+	static void convert     	(const std::string &literal);
+	static std::string inpuType	(const std :: string &literal);
+    static void IntPrint    	(double literal);
+    static void FloatPrint  	(double literal);
+    static void DoublePrint 	(double literal);
+    static void CharPrint   	(double literal);
 };
 
 #endif
