@@ -6,7 +6,7 @@
 /*   By: alaaouar <alaaouar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 18:55:21 by alaaouar          #+#    #+#             */
-/*   Updated: 2025/10/31 04:41:07 by alaaouar         ###   ########.fr       */
+/*   Updated: 2025/10/31 18:56:25 by alaaouar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ std::string ScalarConverter :: inpuType	(const std :: string &literal)
         return "char";
     char *pEnd;
     long val = 0;
-    val = std::strtol(literal.c_str(), &pEnd, 10);
+    val = strtol(literal.c_str(), &pEnd, 10);
     if(*pEnd == '\0' && val >= INT_MIN && val <= INT_MAX)
         return "int";
     if(!literal.empty() && literal[literal.length() - 1] == 'f')
@@ -42,12 +42,12 @@ std::string ScalarConverter :: inpuType	(const std :: string &literal)
         std::string text;
         char *pfend;
         text = literal.substr(0, literal.length() - 1);
-        std::strtod(text.c_str(), &pfend);
+        strtod(text.c_str(), &pfend);
         if(*pfend == '\0')
             return "float";
     }
     char *pdend;
-    std::strtod(literal.c_str(), &pdend);
+    strtod(literal.c_str(), &pdend);
     if(*pdend == '\0')
         return "double";
     
@@ -72,7 +72,19 @@ void ScalarConverter::convert(const std::string &literal)
             return;
         }
     }
-    
+    if (inpuType(literal) == "char")            {
+        char c = literal[0];
+        data = static_cast<double>(c);
+    }   else if (inpuType(literal) == "int")    {
+        data = atoi(literal.c_str()); 
+    }   else if (inpuType(literal) == "double") {
+        data = strtod(literal.c_str(), NULL);
+    }   else if (inpuType(literal) == "float")  {
+        data = static_cast<double> (strtof(literal.c_str(), NULL));
+    }   else    {
+        std::cout << "conversion impossible!" << std::endl;
+        return ;
+    }
     CharPrint(data);
     IntPrint(data);
     FloatPrint(data);
