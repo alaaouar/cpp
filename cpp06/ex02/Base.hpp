@@ -1,26 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.hpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alaaouar <alaaouar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/31 19:09:04 by alaaouar          #+#    #+#             */
-/*   Updated: 2025/10/31 22:41:56 by alaaouar         ###   ########.fr       */
+/*   Created: 2025/10/31 22:52:30 by alaaouar          #+#    #+#             */
+/*   Updated: 2025/10/31 23:05:21 by alaaouar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_HPP
-#define DATA_HPP
 
+#ifndef BASE_HPP
+#define BASE_HPP
+
+#include <stdlib.h>
+#include <ctime>
 #include <iostream>
-#include <stdint.h>
 
-struct Data
+class Base
 {
-    int number;
-    std::string strings;
-    char letter;
+    public:
+        virtual ~Base();
+};
+
+class A : public Base
+{
+public:
+    ~A();
+};
+
+class B : public Base
+{
+public:
+    ~B();
+};
+
+class C : public Base
+{
+public:
+    ~C();  
 };
 
 #endif

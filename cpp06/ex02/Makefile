@@ -1,5 +1,5 @@
-NAME=Bureaucrat
-SRC=Bureaucrat.cpp main.cpp
+NAME=base
+SRC=Base.cpp
 CPPFLAGS= -Wall -Werror -Wextra -std=c++98
 CXX= c++
 OBJ= ${SRC:.cpp=.o}

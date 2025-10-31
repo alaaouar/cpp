@@ -1,5 +1,5 @@
 NAME=Serialization
-SRC=Serialization.cpp main.cpp
+SRC=Serializer.cpp main.cpp
 CPPFLAGS= -Wall -Werror -Wextra -std=c++98
 CXX= c++
 OBJ= ${SRC:.cpp=.o}
