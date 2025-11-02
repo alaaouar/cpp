@@ -6,7 +6,7 @@
 /*   By: alaaouar <alaaouar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 18:55:21 by alaaouar          #+#    #+#             */
-/*   Updated: 2025/10/31 18:56:25 by alaaouar         ###   ########.fr       */
+/*   Updated: 2025/11/01 19:39:20 by alaaouar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,7 @@ void ScalarConverter::DoublePrint(double literal)
     std::cout << "double: ";
     std::cout << static_cast<double>(literal) << std::endl;
 }
+
 void ScalarConverter::CharPrint(double literal)
 {
     std::cout << "char: ";
