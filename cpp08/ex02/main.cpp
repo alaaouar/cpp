@@ -6,11 +6,12 @@
 /*   By: alaaouar <alaaouar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 01:04:26 by alaaouar          #+#    #+#             */
-/*   Updated: 2025/11/08 01:08:39 by alaaouar         ###   ########.fr       */
+/*   Updated: 2025/11/09 18:21:55 by alaaouar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
+#include <iostream>
 
 int main()
 {
