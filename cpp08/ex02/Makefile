@@ -1,5 +1,5 @@
 NAME = MutantStack
-SRC = main.cpp MutantStack.cpp
+SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 CXX = c++

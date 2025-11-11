@@ -6,7 +6,7 @@
 /*   By: alaaouar <alaaouar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 22:23:35 by alaaouar          #+#    #+#             */
-/*   Updated: 2025/11/07 23:18:34 by alaaouar         ###   ########.fr       */
+/*   Updated: 2025/11/11 02:23:31 by alaaouar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,16 +57,16 @@ public:
     ~Span();
 
     void addNumber(int n);
-    template <typename InputIt>
-    void addNumber(InputIt first, InputIt last)
+    
+    template <typename Iter>
+    void addRange(Iter begin, Iter end)
     {
-        typename std::iterator_traits<InputIt>::difference_type dist = std::distance(first, last);
-        if (dist < 0)
-            return;
-        if (vect.size() + static_cast<size_t>(dist) > N)
-            throw TooManyElementsException();
-        vect.insert(vect.end(), first, last);
+        for (Iter it = begin; it != end; ++it)
+        {
+            addNumber(*it);
+        }
     }
+    
     int shortestSpan() const;
     int longestSpan() const;
 };
