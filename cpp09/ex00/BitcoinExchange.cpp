@@ -6,7 +6,7 @@
 /*   By: alaaouar <alaaouar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 00:35:48 by alaaouar          #+#    #+#             */
-/*   Updated: 2025/11/15 19:55:34 by alaaouar         ###   ########.fr       */
+/*   Updated: 2025/11/15 22:19:10 by alaaouar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,55 @@ void BitcoinExchange::fillmap(std::ifstream& datafile) {
     }
 }
 
+bool  BitcoinExchange::validValue(double value) {
+    if (value < 0) {
+        std::cout << "Error: not a positive number." << std::endl;
+        return false;
+    }
+    if (value > 1000) {
+        std::cout << "Error: too large a number." << std::endl;
+        return false;
+    }
+    return true;
+}
+
+bool    BitcoinExchange::validDate(const std::string& date){
+    if (date.length() != 10 || date[4] != '-' || date[7] != '-') {
+        std::cout << "Error: bad input => " << date << std::endl;
+        return false;
+    }
+    int year = std::atoi(date.substr(0, 4).c_str());
+    int month = std::atoi(date.substr(5, 2).c_str());
+    int day = std::atoi(date.substr(8, 2).c_str());
+    
+    if (year < 2009 || year > 2023) {
+        std::cout << "Error: bad input => " << date << std::endl;
+        return false;
+    }
+    if (month < 1 || month > 12 || day < 1 || day > 31) {
+        std::cout << "Error: bad input => " << date << std::endl;
+        return false;
+    }
+    if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30) {
+        std::cout << "Error: bad input => " << date << std::endl;
+        return false;
+    }
+    if (month == 2) {
+        bool isLeap = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+        if (day > (isLeap ? 29 : 28)) {
+            std::cout << "Error: bad input => " << date << std::endl;
+            return false;
+        }
+    }
+    return true;
+}
+
 void BitcoinExchange::excute(const std::string& filename) {
     std ::ifstream infile(filename.c_str());
     if (!infile.is_open())
-        throw std::runtime_error("Could not open file: " + filename);
+        throw std::runtime_error("Error: could not open file." + filename);
     if (infile.eof())
-        throw std::runtime_error("File is empty: " + filename);
+        throw std::runtime_error("Error: file is empty: " + filename);
     std::ifstream datafile("data.csv");
     if (!datafile.is_open())
         throw std::runtime_error("Could not open data file: data.csv");
@@ -47,10 +90,36 @@ void BitcoinExchange::excute(const std::string& filename) {
             continue;
     
         size_t delim = line.find('|');
-        if (delim == std::string::npos)// understand this one 
+        if (delim == std::string::npos)
         {
             std::cout << "Error: bad input => " << line << std::endl;
             continue;
         }
+        std::string date = line.substr(0, delim - 1);
+        std::string value_str = line.substr(delim + 2);
+        double value;
+        try {
+            value = std::stod(value_str);
+        } catch (const std::exception&) {
+            std::cout << "Error: invalid value => " << value_str << std::endl;
+            continue;
+        }
+        if (value < 0)
+        {
+            std::cout << "Error: not a positive number." << std::endl;
+            continue;
+        }
+        
+        if (!validDate(date))
+            continue;
+        if (!validValue(value))
+            continue;
+        std::istringstream iss(value_str);
+        double rate;
+        iss >> rate;
+        rate *= get_rate(date);
+
+        std::cout << date << " => " << value << " = " << rate << std::endl;
+            
     }
 }

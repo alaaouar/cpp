@@ -6,7 +6,7 @@
 /*   By: alaaouar <alaaouar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 23:18:04 by alaaouar          #+#    #+#             */
-/*   Updated: 2025/11/15 00:43:02 by alaaouar         ###   ########.fr       */
+/*   Updated: 2025/11/15 22:19:25 by alaaouar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ public:
 
     void excute(const std::string& filename);
     void fillmap(std::ifstream& datafile);
+    bool validDate(const std::string& date);
+    bool validValue(double value);
+    bool validValue(const std::string& value);
 };
 
 #endif
