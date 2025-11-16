@@ -6,11 +6,23 @@
 /*   By: alaaouar <alaaouar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 00:35:48 by alaaouar          #+#    #+#             */
-/*   Updated: 2025/11/15 22:19:10 by alaaouar         ###   ########.fr       */
+/*   Updated: 2025/11/16 01:00:55 by alaaouar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
+
+double BitcoinExchange::get_rate(const std::string& date) {
+    std::map<std::string, double>::iterator it = data.lower_bound(date);
+    if (it != data.end() && it->first == date) {
+        return it->second;
+    }
+    if (it == data.begin()) {
+        return 0.0;
+    }
+    --it;
+    return it->second;
+}
 
 void BitcoinExchange::fillmap(std::ifstream& datafile) {
     std::string line;
@@ -42,9 +54,19 @@ bool    BitcoinExchange::validDate(const std::string& date){
         std::cout << "Error: bad input => " << date << std::endl;
         return false;
     }
-    int year = std::atoi(date.substr(0, 4).c_str());
-    int month = std::atoi(date.substr(5, 2).c_str());
-    int day = std::atoi(date.substr(8, 2).c_str());
+    std::string year_str = date.substr(0, 4);
+    std::string month_str = date.substr(5, 2);
+    std::string day_str = date.substr(8, 2);
+    if (year_str.find_first_not_of("0123456789") != std::string::npos ||
+        month_str.find_first_not_of("0123456789") != std::string::npos ||
+        day_str.find_first_not_of("0123456789") != std::string::npos)
+    {
+        std::cout << "Error: bad input=>" << date << std::endl;
+        return false;
+    }
+    int year = std::atoi(year_str.c_str());
+    int month = std::atoi(month_str.c_str());
+    int day = std::atoi(day_str.c_str());
     
     if (year < 2009 || year > 2023) {
         std::cout << "Error: bad input => " << date << std::endl;
@@ -98,9 +120,8 @@ void BitcoinExchange::excute(const std::string& filename) {
         std::string date = line.substr(0, delim - 1);
         std::string value_str = line.substr(delim + 2);
         double value;
-        try {
-            value = std::stod(value_str);
-        } catch (const std::exception&) {
+        std::istringstream iss_value(value_str);
+        if (!(iss_value >> value)) {
             std::cout << "Error: invalid value => " << value_str << std::endl;
             continue;
         }
